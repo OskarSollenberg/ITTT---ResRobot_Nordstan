@@ -2,7 +2,7 @@
 ////
 ////
 ////
-"use strict";
+("use strict");
 
 function buildList(departures) {
     var ul = document.getElementById("list");
@@ -17,7 +17,7 @@ let url =
 async function getData() {
     let res = await fetch(url);
     let data = await res.json();
-    console.log(data);
+    // console.log(data);
 
     let stop = [];
     let name = [];
@@ -30,10 +30,6 @@ async function getData() {
             times.push(depature.time);
             stop.push(depature.stop);
             name.push(depature.name);
-
-            // buildList(depature.stop);
-            // buildList(depature.name);
-            // buildList(depature.time);
         }
     });
 
@@ -41,6 +37,6 @@ async function getData() {
     buildList(times[0]);
     buildList(name[0]);
 
-    console.log(times);
+    // console.log(times);
 }
 getData();
