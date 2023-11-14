@@ -1,42 +1,67 @@
-////
-////
-////
-////
 ("use strict");
-
-function buildList(departures) {
-    var ul = document.getElementById("list");
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode(departures));
-    ul.appendChild(li);
-}
 
 let url =
     "https://api.resrobot.se/v2.1/departureBoard?id=740000002&format=json&accessId=d8a53cbb-324f-4aa5-be0a-63c39f3895b6";
 
-async function getData() {
+// async function getData() {
+//     try {
+//         let res = await fetch(url);
+//         let data = await res.json();
+
+//         displayData(data);
+//     } catch (error) {
+//         console.error("Error fetching or parsing data:", error);
+//     }
+// }
+
+async function fetchAndDisplayBus() {
     let res = await fetch(url);
     let data = await res.json();
-    // console.log(data);
 
-    let stop = [];
-    let name = [];
-    let times = [];
+    data.Departure.forEach((departure) => {
+        if (departure.stop.includes("Nordstan")) {
+            ////
+            const busTime = document.querySelector("#time");
+            const busStop = document.querySelector("#stop");
+            const busName = document.querySelector("#name");
 
-    data.Departure.forEach((depature) => {
-        if (depature.stop.includes("Nordstan")) {
-            ////
-            ////
-            times.push(depature.time);
-            stop.push(depature.stop);
-            name.push(depature.name);
+            let busTimes = [];
+            let busStops = [];
+            let busNames = [];
+
+            busTimes.push(departure.time);
+            busStops.push(departure.stop);
+            busNames.push(departure.name);
+
+            console.log(busTimes);
+
+            busTime.textContent = busTimes[0];
+            busStop.textContent = busStops[0];
+            busName.textContent = busNames[0];
+
+            const timeArr = departure.time.split(":");
+            const h = timeArr[0];
+            const m = timeArr[1];
+            const s = timeArr[2];
+
+            const busTimeMs = h * 60 * 60 * 1000 + m * 60 * 1000 + s * 1000;
+
+            const now = new Date();
+            const midnight = new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                now.getDate()
+            );
+            const currentTimeMs = now - midnight;
+
+            const busLeavesInMs = busTimeMs - currentTimeMs;
+
+            setTimeout(function () {
+                fetchAndDisplayBus();
+            }, busLeavesInMs);
         }
     });
-
-    buildList(stop[0]);
-    buildList(times[0]);
-    buildList(name[0]);
-
-    // console.log(times);
 }
-getData();
+fetchAndDisplayBus();
+
+// setInterval(getData, 1000);
