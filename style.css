@@ -23,3 +23,41 @@ ul {
 .item {
     font-size: 3rem;
 }
+
+.bus {
+    position: absolute;
+    width: 4rem;
+    height: 2rem;
+    background: black;
+    transition: all 3s;
+    top: 60%;
+    left: 90%;
+}
+
+.bus--turn--left {
+    transform: rotateZ(-90deg);
+}
+
+.bus--turn--right {
+    transform: rotateZ(90deg);
+}
+
+.bus--first--stop {
+    left: 70%;
+}
+
+.bus--second--stop {
+    top: 20%;
+}
+
+.bus--third--stop {
+    left: 20%;
+}
+
+.bus--fourth--stop {
+    top: 60%;
+}
+
+.bus--fifth--stop {
+    left: 50%;
+}
