@@ -89,84 +89,63 @@ const bus = document.querySelector("#bus");
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
 
+    // busLeavesInMs = 90000;
+
     if (busLeavesInMs > 0) {
         bus.classList.add("bus--active");
 
         setTimeout(() => {
-            if (busLeavesInMs < 120000) {
+            if (busLeavesInMs < 100000) {
                 bus.classList.add("bus--first--stop");
 
-                if (busLeavesInMs < 100000) {
+                setTimeout(() => {
+                    bus.classList.add("bus--turn--right");
+
                     setTimeout(() => {
-                        bus.classList.add("bus--turn--right");
+                        bus.classList.add("bus--second--stop");
 
                         setTimeout(() => {
-                            bus.classList.add("bus--second--stop");
+                            bus.classList.add("bus--turn--back");
 
-                            if (busLeavesInMs < 80000) {
+                            setTimeout(() => {
+                                bus.classList.add("bus--third--stop");
+
                                 setTimeout(() => {
-                                    bus.classList.add("bus--turn--back");
+                                    bus.classList.add("bus--turn--left");
 
                                     setTimeout(() => {
-                                        bus.classList.add("bus--third--stop");
+                                        bus.classList.add("bus--fourth--stop");
 
-                                        if (busLeavesInMs < 60000) {
+                                        setTimeout(() => {
+                                            bus.classList.add(
+                                                "bus--turn--left--again"
+                                            );
+
                                             setTimeout(() => {
                                                 bus.classList.add(
-                                                    "bus--turn--left"
+                                                    "bus--final--stop"
                                                 );
 
                                                 setTimeout(() => {
                                                     bus.classList.add(
-                                                        "bus--fourth--stop"
+                                                        "bus--out"
                                                     );
 
-                                                    if (busLeavesInMs < 40000) {
-                                                        setTimeout(() => {
-                                                            bus.classList.add(
-                                                                "bus--turn--left--again"
-                                                            );
-
-                                                            setTimeout(() => {
-                                                                bus.classList.add(
-                                                                    "bus--final--stop"
-                                                                );
-
-                                                                if (
-                                                                    busLeavesInMs <
-                                                                    20000
-                                                                ) {
-                                                                    setTimeout(
-                                                                        () => {
-                                                                            bus.classList.add(
-                                                                                "bus--out"
-                                                                            );
-
-                                                                            setTimeout(
-                                                                                () => {
-                                                                                    bus.classList.remove(
-                                                                                        ...bus.classList
-                                                                                    );
-                                                                                },
-                                                                                "3000"
-                                                                            );
-                                                                        },
-                                                                        "1000"
-                                                                    );
-                                                                }
-                                                            }, "3000");
-                                                        }, "3000");
-                                                    }
-                                                }, "3000");
-                                            }, "3000");
-                                        }
-                                    }, "3000");
-                                }, "3000");
-                            }
-                        }, "3000");
-                    }, "3000");
-                }
+                                                    setTimeout(() => {
+                                                        bus.classList.remove(
+                                                            ...bus.classList
+                                                        );
+                                                    }, "3000");
+                                                }, "12000");
+                                            }, "6000");
+                                        }, "6000");
+                                    }, "6000");
+                                }, "6000");
+                            }, "6000");
+                        }, "6000");
+                    }, "6000");
+                }, "6000");
             }
-        }, "3000");
+        }, "6000");
     }
 }
