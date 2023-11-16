@@ -75,9 +75,12 @@ ul {
 .station--5 {
     bottom: -12px;
     left: -12px;
-    background: red;
     padding: 0.4rem;
     border: 0.4rem solid black;
+}
+
+.bg-red {
+    background: red;
 }
 .area {
     position: relative;
