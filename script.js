@@ -56,7 +56,7 @@ async function fetchAndDisplayBus() {
     setTimeout(function () {
         fetchAndDisplayBus();
         calcTimeToNextBuss();
-    }, 10000);
+    }, 1000);
 }
 fetchAndDisplayBus();
 
@@ -94,24 +94,17 @@ const bus = document.querySelector("#bus");
 
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
+    // busLeavesInMs = 100;
 
-    // busLeavesInMs = 1;
-    if (busLeavesInMs < 0) {
-        station1.classList.remove("bg-red");
-        station2.classList.remove("bg-red");
-        station3.classList.remove("bg-red");
-        station4.classList.remove("bg-red");
-        station5.classList.remove("bg-red");
-    }
     ////
-    else if (busLeavesInMs > 1) {
+    if (busLeavesInMs > 1) {
         bus.classList.add("bus--active");
 
         setTimeout(() => {
-            if (busLeavesInMs < 200000) {
+            if (busLeavesInMs < 400000) {
                 bus.classList.add("bus--first--stop");
 
-                if (busLeavesInMs < 150000) {
+                if (busLeavesInMs < 250000) {
                     setTimeout(() => {
                         station1.classList.add("bg-red");
                         bus.classList.add("bus--turn--right");
@@ -119,7 +112,7 @@ function driveBuss(busLeavesInMs) {
                         setTimeout(() => {
                             bus.classList.add("bus--second--stop");
 
-                            if (busLeavesInMs < 100000) {
+                            if (busLeavesInMs < 150000) {
                                 setTimeout(() => {
                                     station2.classList.add("bg-red");
                                     bus.classList.add("bus--turn--back");
@@ -127,7 +120,7 @@ function driveBuss(busLeavesInMs) {
                                     setTimeout(() => {
                                         bus.classList.add("bus--third--stop");
 
-                                        if (busLeavesInMs < 70000) {
+                                        if (busLeavesInMs < 10000) {
                                             setTimeout(() => {
                                                 station3.classList.add(
                                                     "bg-red"
@@ -175,6 +168,21 @@ function driveBuss(busLeavesInMs) {
                                                                                     bus.classList.remove(
                                                                                         ...bus.classList
                                                                                     );
+                                                                                    station1.classList.remove(
+                                                                                        "bg-red"
+                                                                                    );
+                                                                                    station2.classList.remove(
+                                                                                        "bg-red"
+                                                                                    );
+                                                                                    station3.classList.remove(
+                                                                                        "bg-red"
+                                                                                    );
+                                                                                    station4.classList.remove(
+                                                                                        "bg-red"
+                                                                                    );
+                                                                                    station5.classList.remove(
+                                                                                        "bg-red"
+                                                                                    );
                                                                                 },
                                                                                 "3000"
                                                                             );
@@ -196,5 +204,6 @@ function driveBuss(busLeavesInMs) {
                 }
             }
         }, "1000");
+    } else {
     }
 }

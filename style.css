@@ -37,10 +37,12 @@ ul {
 @media (min-width: 50rem) {
     .direction {
         font-size: 2rem;
+        color: black;
     }
 }
 .time {
     font-size: 1rem;
+    color: black;
 }
 @media (min-width: 50rem) {
     .time {
@@ -51,32 +53,37 @@ ul {
 .station {
     z-index: 100;
     position: absolute;
-    padding: 0.3rem;
+    padding: 0.4rem;
     background: black;
-    border: 0.3rem solid black;
+    border: 0.4rem solid black;
     border-radius: 100%;
 }
 .station--1 {
-    bottom: -10px;
-    left: -10px;
+    bottom: -19px;
+    left: -19px;
 }
 .station--2 {
-    top: -10px;
-    right: -10px;
+    top: -19px;
+    right: -19px;
 }
 .station--3 {
-    top: -10px;
-    left: -10px;
+    top: -19px;
+    left: -19px;
 }
 .station--4 {
-    bottom: -10px;
-    left: -10px;
+    bottom: -19px;
+    left: -19px;
 }
 .station--5 {
-    bottom: -12px;
-    left: -12px;
-    padding: 0.4rem;
-    border: 0.4rem solid black;
+    bottom: -24px;
+    left: -24px;
+    padding: 0.6rem;
+    border: 0.6rem solid black;
+}
+
+.train-station__img {
+    transform: translate(-77px, 20px);
+    width: 40%;
 }
 
 .bg-red {
@@ -99,40 +106,40 @@ ul {
 .one {
     grid-column: 7 / 9;
     grid-row: 3 / 6;
-    border-bottom: 0.1rem dotted black;
+    border-bottom: 1rem double black;
 }
 .two {
     grid-column: 6 / 7;
     grid-row: 3 /6;
-    border-top: 0.1rem dotted black;
-    border-right: 0.1rem dotted black;
+    border-top: 1rem double black;
+    border-right: 1rem double black;
 }
 .three {
     grid-column: 4 / 6;
     grid-row: 3 / 3;
-    border-top: 0.1rem dotted black;
+    border-top: 1rem double black;
 }
 .four {
     grid-column: 3 / 4;
     grid-row: 3 / 6;
-    border-top: 0.1rem dotted black;
-    border-left: 0.1rem dotted black;
+    border-top: 1rem double black;
+    border-left: 1rem double black;
 }
 .five {
     grid-column: 3 / 5;
     grid-row: 6 / 6;
-    border-left: 0.1rem dotted black;
-    border-bottom: 0.1rem dotted black;
+    border-left: 1rem double black;
+    border-bottom: 1rem double black;
 }
 .six {
     grid-column: 5 / 7;
     grid-row: 6 / 6;
-    /* border-bottom: 0.2rem double black; */
+    border-bottom: 1rem double black;
 }
 .seven {
     grid-column: 7 / 9;
     grid-row: 6 / 6;
-    /* border-bottom: 0.2rem double black; */
+    border-bottom: 1rem double black;
 }
 .eight {
     grid-column: 4 / 6;
@@ -156,7 +163,7 @@ ul {
     border-radius: 5px;
     background: black;
     transition: all 3s;
-    top: 60%;
+    top: 52.5%;
     left: 120%;
 }
 
@@ -174,23 +181,23 @@ ul {
 }
 
 .bus--first--stop {
-    left: 72.5%;
+    left: 72%;
 }
 
 .bus--second--stop {
-    top: 23%;
+    top: 21%;
 }
 
 .bus--third--stop {
-    left: 22.8%;
+    left: 23.2%;
 }
 
 .bus--fourth--stop {
-    top: 72.5%;
+    top: 74.2%;
 }
 
 .bus--final--stop {
-    left: 48%;
+    left: 47%;
 }
 
 .bus--out {
