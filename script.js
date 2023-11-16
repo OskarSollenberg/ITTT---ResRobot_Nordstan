@@ -5,11 +5,9 @@ let url =
 
 const busTime = document.querySelector("#time");
 const busStop = document.querySelector("#stop");
-const busName = document.querySelector("#name");
+const busDirection = document.querySelector("#direction");
 
 let busTimes = [];
-let busStops = [];
-let busNames = [];
 let busDirections = [];
 
 async function fetchAndDisplayBus() {
@@ -17,8 +15,6 @@ async function fetchAndDisplayBus() {
     let data = await res.json();
 
     busTimes = [];
-    busStops = [];
-    busNames = [];
     busDirections = [];
 
     data.Departure.forEach((departure) => {
@@ -27,21 +23,26 @@ async function fetchAndDisplayBus() {
             departure.name.includes("16")
         ) {
             busTimes.push(departure.time);
-            // busStops.push(departure.stop);
-            busNames.push(departure.name);
             busDirections.push(departure.direction);
 
             if (busDirections[0].includes("Bockkranen")) {
-                busTime.textContent = `Bockkranen ${busTimes[0]}`;
+                busTime.textContent = `${busTimes[0]}`;
+                busDirection.textContent = "BOCKKRANEN";
+
                 ////
             } else if (busDirections[0].includes("Fyrktorget")) {
-                busTime.textContent = `Fyrktorget ${busTimes[0]}`;
+                busTime.textContent = `${busTimes[0]}`;
+                busDirection.textContent = "FRYKTORGET";
+
                 ////
             } else if (busDirections[0].includes("Marklandsgatan")) {
-                busTime.textContent = `Marklandsgatan ${busTimes[0]}`;
+                busTime.textContent = `${busTimes[0]}`;
+                busDirection.textContent = "MARKLANDSGATAN";
+
                 ////
             } else if (busDirections[0].includes("Eriksbergstorget")) {
-                busTime.textContent = `Eriksbergstorget ${busTimes[0]}`;
+                busTime.textContent = `${busTimes[0]}`;
+                busDirection.textContent = "ERIKSBERGSTORGET";
             }
         }
 
@@ -84,73 +85,88 @@ function calcTimeToNextBuss() {
 // console.log(busLeavesInMs);
 
 const bus = document.querySelector("#bus");
-// const number = 0;
-
-// if (number <= 0) {
-// }
 
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
 
-    if (busLeavesInMs < 1) {
-        bus.classList.remove(...bus.classList);
-    }
-    ////
-    if (busLeavesInMs > 1) {
-        bus.classList.add("bus");
-        if (busLeavesInMs < 100000) {
-            bus.classList.add("bus--first--stop");
+    if (busLeavesInMs > 0) {
+        bus.classList.add("bus--active");
 
-            if (busLeavesInMs < 80000) {
-                setTimeout(() => {
-                    bus.classList.add("bus--second--stop");
+        setTimeout(() => {
+            if (busLeavesInMs < 120000) {
+                bus.classList.add("bus--first--stop");
 
-                    if (busLeavesInMs < 50000) {
+                if (busLeavesInMs < 100000) {
+                    setTimeout(() => {
+                        bus.classList.add("bus--turn--right");
+
                         setTimeout(() => {
-                            bus.classList.add("bus--third--stop");
-                            // bus.classList.remove("bus--first--stop");
+                            bus.classList.add("bus--second--stop");
 
-                            if (busLeavesInMs < 40000) {
+                            if (busLeavesInMs < 80000) {
                                 setTimeout(() => {
-                                    bus.classList.add("bus--fourth--stop");
-                                    // bus.classList.remove("bus--second--stop");
+                                    bus.classList.add("bus--turn--back");
 
-                                    if (busLeavesInMs < 20000) {
-                                        setTimeout(() => {
-                                            bus.classList.add(
-                                                "bus--fifth--stop"
-                                            );
-                                            // bus.classList.remove(
-                                            //     "bus--third--stop"
-                                            // );
-                                        }, "3000");
-                                    }
+                                    setTimeout(() => {
+                                        bus.classList.add("bus--third--stop");
+
+                                        if (busLeavesInMs < 60000) {
+                                            setTimeout(() => {
+                                                bus.classList.add(
+                                                    "bus--turn--left"
+                                                );
+
+                                                setTimeout(() => {
+                                                    bus.classList.add(
+                                                        "bus--fourth--stop"
+                                                    );
+
+                                                    if (busLeavesInMs < 40000) {
+                                                        setTimeout(() => {
+                                                            bus.classList.add(
+                                                                "bus--turn--left--again"
+                                                            );
+
+                                                            setTimeout(() => {
+                                                                bus.classList.add(
+                                                                    "bus--final--stop"
+                                                                );
+
+                                                                if (
+                                                                    busLeavesInMs <
+                                                                    20000
+                                                                ) {
+                                                                    setTimeout(
+                                                                        () => {
+                                                                            bus.classList.add(
+                                                                                "bus--out"
+                                                                            );
+
+                                                                            setTimeout(
+                                                                                () => {
+                                                                                    bus.classList.remove(
+                                                                                        ...bus.classList
+                                                                                    );
+                                                                                },
+                                                                                "3000"
+                                                                            );
+                                                                        },
+                                                                        "1000"
+                                                                    );
+                                                                }
+                                                            }, "3000");
+                                                        }, "3000");
+                                                    }
+                                                }, "3000");
+                                            }, "3000");
+                                        }
+                                    }, "3000");
                                 }, "3000");
                             }
                         }, "3000");
-                    }
-                }, "3000");
+                    }, "3000");
+                }
             }
-        }
+        }, "3000");
     }
 }
-
-// bus.style.transform = "rotateZ(90deg)";
-// bus.style.transform = "rotateZ(90deg)";
-
-// function secondStop() {
-//     bus.style.left = "70%";
-//     bus.style.transform = "rotateZ(90deg)";
-// }
-
-//     function driveToSecondStop() {
-//         bus.classList.toggle("bus--second--stop");
-
-//         setTimeout(() => {
-//             bus.classList.remove("bus--turn--right");
-//             setTimeout(() => {
-//                 driveToSecondStop();
-//             }, "2500");
-//         }, "2500");
-//     }
-// }

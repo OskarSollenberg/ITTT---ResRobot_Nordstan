@@ -7,39 +7,62 @@
 body {
     width: 100vw;
     height: 100vh;
+    font-family: "IBM Plex Serif", serif;
+}
 
+main {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 25rem;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: #fffeef;
+    border: 0.2rem solid black;
 }
 
 ul {
-    padding: 2rem;
-    /* border: 1px solid black; */
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     list-style: none;
+    /* border: 1px solid black; */
 }
 
-.item {
+.direction {
     font-size: 3rem;
 }
 
-.bus {
+.time {
+    font-size: 2rem;
+}
+
+.bus--active {
+    transform-origin: center;
     position: absolute;
     width: 4rem;
     height: 2rem;
     background: black;
     transition: all 3s;
     top: 60%;
-    left: 90%;
-}
-
-.bus--turn--left {
-    transform: rotateZ(-90deg);
+    left: 120%;
 }
 
 .bus--turn--right {
     transform: rotateZ(90deg);
+}
+.bus--turn--back {
+    transform: rotateZ(0deg);
+}
+.bus--turn--left {
+    transform: rotateZ(-90deg);
+}
+.bus--turn--left--again {
+    transform: rotateZ(-180deg);
 }
 
 .bus--first--stop {
@@ -58,6 +81,10 @@ ul {
     top: 60%;
 }
 
-.bus--fifth--stop {
+.bus--final--stop {
     left: 50%;
+}
+
+.bus--out {
+    left: 120%;
 }
