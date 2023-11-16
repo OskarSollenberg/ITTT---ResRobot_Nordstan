@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body,
+html,
+main {
+    overflow: hidden;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -11,41 +17,140 @@ body {
 }
 
 main {
+    position: relative;
     width: 100vw;
     height: 100vh;
-    padding-top: 25rem;
-    overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     background: #fffeef;
-    border: 0.2rem solid black;
 }
 
 ul {
-    margin-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
     list-style: none;
-    /* border: 1px solid black; */
 }
 
 .direction {
-    font-size: 3rem;
+    font-size: 1rem;
+}
+@media (min-width: 50rem) {
+    .direction {
+        font-size: 2rem;
+    }
+}
+.time {
+    font-size: 1rem;
+}
+@media (min-width: 50rem) {
+    .time {
+        font-size: 2rem;
+    }
 }
 
-.time {
-    font-size: 2rem;
+.station {
+    z-index: 100;
+    position: absolute;
+    padding: 0.3rem;
+    background: black;
+    border: 0.3rem solid black;
+    border-radius: 100%;
+}
+.station--1 {
+    bottom: -10px;
+    left: -10px;
+}
+.station--2 {
+    top: -10px;
+    right: -10px;
+}
+.station--3 {
+    top: -10px;
+    left: -10px;
+}
+.station--4 {
+    bottom: -10px;
+    left: -10px;
+}
+.station--5 {
+    bottom: -12px;
+    left: -12px;
+    background: red;
+    padding: 0.4rem;
+    border: 0.4rem solid black;
+}
+.area {
+    position: relative;
+}
+
+.grid {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.one {
+    grid-column: 7 / 9;
+    grid-row: 3 / 6;
+    border-bottom: 0.1rem dotted black;
+}
+.two {
+    grid-column: 6 / 7;
+    grid-row: 3 /6;
+    border-top: 0.1rem dotted black;
+    border-right: 0.1rem dotted black;
+}
+.three {
+    grid-column: 4 / 6;
+    grid-row: 3 / 3;
+    border-top: 0.1rem dotted black;
+}
+.four {
+    grid-column: 3 / 4;
+    grid-row: 3 / 6;
+    border-top: 0.1rem dotted black;
+    border-left: 0.1rem dotted black;
+}
+.five {
+    grid-column: 3 / 5;
+    grid-row: 6 / 6;
+    border-left: 0.1rem dotted black;
+    border-bottom: 0.1rem dotted black;
+}
+.six {
+    grid-column: 5 / 7;
+    grid-row: 6 / 6;
+    /* border-bottom: 0.2rem double black; */
+}
+.seven {
+    grid-column: 7 / 9;
+    grid-row: 6 / 6;
+    /* border-bottom: 0.2rem double black; */
+}
+.eight {
+    grid-column: 4 / 6;
+    grid-row: 4 / 6;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
 }
 
 .bus--active {
-    transform-origin: center;
+    z-index: 1000;
+    transform-origin: 50% 50%;
     position: absolute;
-    width: 4rem;
+    width: 4.5rem;
     height: 2rem;
+    border-radius: 5px;
     background: black;
     transition: all 3s;
     top: 60%;
@@ -66,23 +171,23 @@ ul {
 }
 
 .bus--first--stop {
-    left: 70%;
+    left: 72.5%;
 }
 
 .bus--second--stop {
-    top: 20%;
+    top: 23%;
 }
 
 .bus--third--stop {
-    left: 20%;
+    left: 22.8%;
 }
 
 .bus--fourth--stop {
-    top: 60%;
+    top: 72.5%;
 }
 
 .bus--final--stop {
-    left: 50%;
+    left: 48%;
 }
 
 .bus--out {

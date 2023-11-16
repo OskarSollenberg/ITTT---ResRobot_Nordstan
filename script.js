@@ -89,28 +89,30 @@ const bus = document.querySelector("#bus");
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
 
+    // busLeavesInMs = 1;
+
     if (busLeavesInMs > 0) {
         bus.classList.add("bus--active");
 
         setTimeout(() => {
-            if (busLeavesInMs < 120000) {
+            if (busLeavesInMs < 200000) {
                 bus.classList.add("bus--first--stop");
 
-                if (busLeavesInMs < 100000) {
+                if (busLeavesInMs < 150000) {
                     setTimeout(() => {
                         bus.classList.add("bus--turn--right");
 
                         setTimeout(() => {
                             bus.classList.add("bus--second--stop");
 
-                            if (busLeavesInMs < 80000) {
+                            if (busLeavesInMs < 100000) {
                                 setTimeout(() => {
                                     bus.classList.add("bus--turn--back");
 
                                     setTimeout(() => {
                                         bus.classList.add("bus--third--stop");
 
-                                        if (busLeavesInMs < 60000) {
+                                        if (busLeavesInMs < 70000) {
                                             setTimeout(() => {
                                                 bus.classList.add(
                                                     "bus--turn--left"
@@ -121,7 +123,7 @@ function driveBuss(busLeavesInMs) {
                                                         "bus--fourth--stop"
                                                     );
 
-                                                    if (busLeavesInMs < 40000) {
+                                                    if (busLeavesInMs < 50000) {
                                                         setTimeout(() => {
                                                             bus.classList.add(
                                                                 "bus--turn--left--again"
@@ -134,7 +136,7 @@ function driveBuss(busLeavesInMs) {
 
                                                                 if (
                                                                     busLeavesInMs <
-                                                                    20000
+                                                                    30000
                                                                 ) {
                                                                     setTimeout(
                                                                         () => {
@@ -151,22 +153,22 @@ function driveBuss(busLeavesInMs) {
                                                                                 "3000"
                                                                             );
                                                                         },
-                                                                        "1000"
+                                                                        "4000"
                                                                     );
                                                                 }
-                                                            }, "3000");
-                                                        }, "3000");
+                                                            }, "2500");
+                                                        }, "2500");
                                                     }
-                                                }, "3000");
-                                            }, "3000");
+                                                }, "2500");
+                                            }, "2500");
                                         }
-                                    }, "3000");
-                                }, "3000");
+                                    }, "2500");
+                                }, "2500");
                             }
-                        }, "3000");
-                    }, "3000");
+                        }, "2500");
+                    }, "2500");
                 }
             }
-        }, "3000");
+        }, "1000");
     }
 }
