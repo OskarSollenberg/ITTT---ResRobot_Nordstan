@@ -10,13 +10,22 @@ main {
   overflow: hidden;
 }
 
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
 body {
   width: 100vw;
   height: 100vh;
   font-family: "IBM Plex Serif", serif;
 }
 
-main {
+.main {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -27,30 +36,26 @@ main {
   background: #fffeef;
 }
 
-ul {
-  list-style: none;
-}
-
-.direction {
+.direction-info {
   font-size: 1rem;
 }
-
 @media (min-width: 50rem) {
-  .direction {
+  .direction-info {
     font-size: 2rem;
     color: black;
   }
 }
-.time {
+
+.departure-time {
   font-size: 1rem;
   color: black;
 }
-
 @media (min-width: 50rem) {
-  .time {
+  .departure-time {
     font-size: 2rem;
   }
 }
+
 .station {
   z-index: 100;
   position: absolute;
@@ -89,7 +94,7 @@ ul {
 
 .train-station__img {
   transform: translate(-77px, 20px);
-  width: 9.2rem;
+  width: 9.1rem;
 }
 
 .train-station--bg-red {
@@ -172,7 +177,7 @@ ul {
   border-bottom: 1rem double black;
 }
 
-.grid-area__eight {
+.grid-area__text {
   grid-column: 4/6;
   grid-row: 4/6;
   text-align: center;
@@ -235,4 +240,4 @@ ul {
 
 .bus--out {
   left: 120%;
-}/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=style.css.map */

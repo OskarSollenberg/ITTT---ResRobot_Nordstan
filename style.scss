@@ -1,3 +1,4 @@
+// Reset
 * {
     margin: 0;
     padding: 0;
@@ -10,13 +11,23 @@ main {
     overflow: hidden;
 }
 
+ul {
+    list-style: none;
+}
+img {
+    width: 100%;
+    display: block;
+}
+
+// Global
 body {
     width: 100vw;
     height: 100vh;
     font-family: "IBM Plex Serif", serif;
 }
 
-main {
+// Styles
+.main {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -27,25 +38,20 @@ main {
     background: #fffeef;
 }
 
-ul {
-    list-style: none;
-}
-
-.direction {
+.direction-info {
     font-size: 1rem;
-}
-@media (min-width: 50rem) {
-    .direction {
+
+    @media (min-width: 50rem) {
         font-size: 2rem;
         color: black;
     }
 }
-.time {
+
+.departure-time {
     font-size: 1rem;
     color: black;
-}
-@media (min-width: 50rem) {
-    .time {
+
+    @media (min-width: 50rem) {
         font-size: 2rem;
     }
 }
@@ -82,7 +88,7 @@ ul {
 }
 .train-station__img {
     transform: translate(-77px, 20px);
-    width: 9.2rem;
+    width: 9.1rem;
 }
 .train-station--bg-red {
     background: red;
@@ -153,7 +159,7 @@ ul {
     grid-row: 6 / 6;
     border-bottom: 1rem double black;
 }
-.grid-area__eight {
+.grid-area__text {
     grid-column: 4 / 6;
     grid-row: 4 / 6;
     text-align: center;

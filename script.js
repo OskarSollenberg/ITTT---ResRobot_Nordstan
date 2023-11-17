@@ -1,7 +1,7 @@
 ("use strict");
 
 let url =
-    "https://api.resrobot.se/v2.1/departureBoard?id=740000002&format=json&accessId=d8a53cbb-324f-4aa5-be0a-63c39f3895b6";
+    "https://api.resrobot.se/v2.1/departureBoard?id=740000002&format=json&accessId=84c3c896-2e69-454c-b8af-f585ae31dd28";
 
 const busTime = document.querySelector("#time");
 const busStop = document.querySelector("#stop");
@@ -94,7 +94,7 @@ const bus = document.querySelector("#bus");
 
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
-    busLeavesInMs = 100;
+    // busLeavesInMs = 100;
 
     ////
     if (busLeavesInMs > 1) {
