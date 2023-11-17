@@ -94,7 +94,7 @@ const bus = document.querySelector("#bus");
 
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
-    // busLeavesInMs = 100;
+    busLeavesInMs = 100;
 
     ////
     if (busLeavesInMs > 1) {
@@ -106,7 +106,7 @@ function driveBuss(busLeavesInMs) {
 
                 if (busLeavesInMs < 250000) {
                     setTimeout(() => {
-                        station1.classList.add("bg-red");
+                        station1.classList.add("train-station--bg-red");
                         bus.classList.add("bus--turn--right");
 
                         setTimeout(() => {
@@ -114,7 +114,9 @@ function driveBuss(busLeavesInMs) {
 
                             if (busLeavesInMs < 150000) {
                                 setTimeout(() => {
-                                    station2.classList.add("bg-red");
+                                    station2.classList.add(
+                                        "train-station--bg-red"
+                                    );
                                     bus.classList.add("bus--turn--back");
 
                                     setTimeout(() => {
@@ -123,7 +125,7 @@ function driveBuss(busLeavesInMs) {
                                         if (busLeavesInMs < 10000) {
                                             setTimeout(() => {
                                                 station3.classList.add(
-                                                    "bg-red"
+                                                    "train-station--bg-red"
                                                 );
 
                                                 bus.classList.add(
@@ -138,7 +140,7 @@ function driveBuss(busLeavesInMs) {
                                                     if (busLeavesInMs < 50000) {
                                                         setTimeout(() => {
                                                             station4.classList.add(
-                                                                "bg-red"
+                                                                "train-station--bg-red"
                                                             );
 
                                                             bus.classList.add(
@@ -157,7 +159,7 @@ function driveBuss(busLeavesInMs) {
                                                                     setTimeout(
                                                                         () => {
                                                                             station5.classList.add(
-                                                                                "bg-red"
+                                                                                "train-station--bg-red"
                                                                             );
                                                                             bus.classList.add(
                                                                                 "bus--out"
@@ -169,19 +171,19 @@ function driveBuss(busLeavesInMs) {
                                                                                         ...bus.classList
                                                                                     );
                                                                                     station1.classList.remove(
-                                                                                        "bg-red"
+                                                                                        "train-station--bg-red"
                                                                                     );
                                                                                     station2.classList.remove(
-                                                                                        "bg-red"
+                                                                                        "train-station--bg-red"
                                                                                     );
                                                                                     station3.classList.remove(
-                                                                                        "bg-red"
+                                                                                        "train-station--bg-red"
                                                                                     );
                                                                                     station4.classList.remove(
-                                                                                        "bg-red"
+                                                                                        "train-station--bg-red"
                                                                                     );
                                                                                     station5.classList.remove(
-                                                                                        "bg-red"
+                                                                                        "train-station--bg-red"
                                                                                     );
                                                                                 },
                                                                                 "3000"
