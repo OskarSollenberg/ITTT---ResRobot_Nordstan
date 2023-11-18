@@ -33,12 +33,12 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: black;
   background: rgb(255, 255, 255);
   background-image: url(assets/images/paper.webp);
   background-blend-mode: exclusion;
   background-size: 70%;
 }
+
 .direction-info {
   font-size: 2rem;
 }
