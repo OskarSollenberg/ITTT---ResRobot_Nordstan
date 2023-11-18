@@ -35,7 +35,6 @@ body {
   flex-direction: column;
   background: black;
 }
-
 .direction-info {
   font-size: 2rem;
 }
@@ -113,10 +112,19 @@ body {
   background: #fffeef;
   border-radius: 3rem;
   border: 2rem solid hsla(57, 19%, 40%, 0.8);
+  transition: border-radius 0.2s;
+  top: 10%;
+  transition: top 1s;
 }
-@media (max-width: 45rem) {
+@media (max-width: 40rem) {
   .grid-container {
-    border: 2rem solid black;
+    position: absolute;
+    top: 0%;
+  }
+}
+@media (max-width: 80rem) {
+  .grid-container {
+    border-radius: 0;
   }
 }
 

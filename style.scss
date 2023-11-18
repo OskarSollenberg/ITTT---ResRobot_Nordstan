@@ -36,6 +36,10 @@ body {
     justify-content: center;
     flex-direction: column;
     background: black;
+
+    @media (max-width: 40rem) {
+        // justify-content: start;
+    }
 }
 
 .direction-info {
@@ -109,9 +113,18 @@ body {
     background: #fffeef;
     border-radius: 3rem;
     border: 2rem solid hsla(57, 19%, 40%, 80%);
-    // border: 2rem solid black;
-    @media (max-width: 45rem) {
-        border: 2rem solid black;
+    transition: border-radius 0.2s;
+    top: 10%;
+    transition: top 1s;
+
+    @media (max-width: 40rem) {
+        // border: 2rem solid black;
+        position: absolute;
+        top: 0%;
+    }
+    @media (max-width: 80rem) {
+        // border: 2rem solid black;
+        border-radius: 0;
     }
 }
 .grid-area__header {
