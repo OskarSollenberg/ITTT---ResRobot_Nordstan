@@ -45,9 +45,6 @@ async function fetchAndDisplayBus() {
                 busDirection.textContent = "ERIKSBERGSTORGET";
             }
         }
-
-        // busName.textContent = `${busNames[0]}`;
-        // busStop.textContent = `${busStops[0]} ${busStops[1]} ${busStops[2]} ${busStops[3]} ${busStops[4]}`;
     });
     // console.log(busTimes);
     // console.log(busDirections);
@@ -74,15 +71,8 @@ function calcTimeToNextBuss() {
 
     const busLeavesInMs = busTimeMs - currentTimeMs;
 
-    // driveBuss(busLeavesInMs);
-
     driveBuss(busLeavesInMs);
-
-    // console.log(busLeavesInMs);
 }
-
-// function driveBuss(busLeavesInMs) {
-// console.log(busLeavesInMs);
 
 let station1 = document.querySelector(".station--1");
 let station2 = document.querySelector(".station--2");
@@ -94,7 +84,7 @@ const bus = document.querySelector("#bus");
 
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
-    busLeavesInMs = 100;
+    // busLeavesInMs = 100;
 
     ////
     if (busLeavesInMs > 1) {
