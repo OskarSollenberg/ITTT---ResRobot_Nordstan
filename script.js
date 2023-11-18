@@ -74,9 +74,9 @@ function calcTimeToNextBuss() {
 
     const busLeavesInMs = busTimeMs - currentTimeMs;
 
-    driveBuss(busLeavesInMs);
-
     // driveBuss(busLeavesInMs);
+
+    driveBuss(busLeavesInMs);
 
     // console.log(busLeavesInMs);
 }
@@ -94,7 +94,7 @@ const bus = document.querySelector("#bus");
 
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
-    // busLeavesInMs = 100;
+    busLeavesInMs = 100;
 
     ////
     if (busLeavesInMs > 1) {

@@ -35,24 +35,22 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: #fffeef;
+    background: black;
 }
 
 .direction-info {
-    font-size: 1rem;
+    font-size: 2rem;
 
-    @media (min-width: 50rem) {
-        font-size: 2rem;
-        color: black;
+    @media (max-width: 50rem) {
+        font-size: 1rem;
     }
 }
 
 .departure-time {
-    font-size: 1rem;
-    color: black;
+    font-size: 2rem;
 
-    @media (min-width: 50rem) {
-        font-size: 2rem;
+    @media (max-width: 50rem) {
+        font-size: 1rem;
     }
 }
 
@@ -96,12 +94,22 @@ body {
 
 .grid-container {
     position: absolute;
+
     width: 100vw;
     height: 100vh;
-    border: 2px solid black;
+    max-width: 80rem;
+    max-height: 40rem;
+    min-width: 35rem;
+    min-height: 40rem;
+
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
+
+    background: #fffeef;
+    border-radius: 3rem;
+    border: 2rem solid hsla(57, 19%, 40%, 80%);
+    // border: 2rem solid black;
 }
 .grid-area__header {
     grid-column: 3 / 7;
@@ -180,7 +188,7 @@ body {
     border-radius: 5px;
     background: black;
     transition: all 3s;
-    top: 52.5%;
+    top: 47%;
     left: 120%;
 }
 .bus--turn--right {
@@ -195,20 +203,81 @@ body {
 .bus--turn--left--again {
     transform: rotateZ(-180deg);
 }
+
 .bus--first--stop {
-    left: 72%;
+    left: 71.4%;
+
+    @media (max-width: 75rem) {
+        left: 71%;
+    }
+    @media (max-width: 70rem) {
+        left: 70.4%;
+    }
+    @media (max-width: 60rem) {
+        left: 69.8%;
+    }
+    @media (max-width: 53rem) {
+        left: 68.7%;
+    }
+    @media (max-width: 45rem) {
+        left: 68%;
+    }
+    @media (max-width: 43rem) {
+        left: 67%;
+    }
+    @media (max-width: 37rem) {
+        left: 66.5%;
+    }
+    @media (max-width: 35rem) {
+        left: 66%;
+    }
 }
 .bus--second--stop {
-    top: 21%;
+    top: 19%;
 }
 .bus--third--stop {
-    left: 23.2%;
+    left: 22.6%;
+
+    @media (max-width: 70rem) {
+        left: 22%;
+    }
+    @media (max-width: 59rem) {
+        left: 21.7%;
+    }
+    @media (max-width: 55rem) {
+        left: 21%;
+    }
+    @media (max-width: 47rem) {
+        left: 20.6%;
+    }
+    @media (max-width: 40rem) {
+        left: 19.2%;
+    }
 }
 .bus--fourth--stop {
-    top: 74.2%;
+    top: 75%;
 }
 .bus--final--stop {
-    left: 47%;
+    left: 46.5%;
+
+    @media (max-width: 70rem) {
+        left: 45.7%;
+    }
+    @media (max-width: 60rem) {
+        left: 45%;
+    }
+    @media (max-width: 53rem) {
+        left: 44%;
+    }
+    @media (max-width: 45rem) {
+        left: 42.7%;
+    }
+    @media (max-width: 40rem) {
+        left: 41.7%;
+    }
+    @media (max-width: 36rem) {
+        left: 41%;
+    }
 }
 .bus--out {
     left: 120%;
