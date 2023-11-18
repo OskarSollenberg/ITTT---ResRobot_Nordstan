@@ -110,6 +110,9 @@ body {
     border-radius: 3rem;
     border: 2rem solid hsla(57, 19%, 40%, 80%);
     // border: 2rem solid black;
+    @media (max-width: 45rem) {
+        border: 2rem solid black;
+    }
 }
 .grid-area__header {
     grid-column: 3 / 7;
