@@ -84,7 +84,7 @@ const bus = document.querySelector("#bus");
 
 function driveBuss(busLeavesInMs) {
     console.log(busLeavesInMs);
-    // busLeavesInMs = 100;
+    busLeavesInMs = 100;
 
     ////
     if (busLeavesInMs > 1) {
