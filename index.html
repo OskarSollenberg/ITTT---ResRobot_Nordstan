@@ -16,51 +16,50 @@
     </head>
     <body>
         <main class="main">
-            <div class="grid-container">
+            <section class="section-grid">
                 <div class="grid-area__header">
                     <h1 class="site__header">
                         Gothenburg Nordstan Departures <br />
                         In real-time.
                     </h1>
                 </div>
-                <div class="grid-area grid-area__one">
-                    <div class="station station--1"></div>
-                </div>
-
-                <div class="grid-area grid-area__two">
-                    <div class="station station--2"></div>
-                </div>
-
-                <div class="grid-area grid-area__three"></div>
-
-                <div class="grid-area grid-area__four">
-                    <div class="station station--3"></div>
-                </div>
-
-                <div class="grid-area grid-area__five">
-                    <div class="station station--4"></div>
-                </div>
-
-                <div class="grid-area grid-area__six">
-                    <div class="station station--5"></div>
+                <div class="grid-area grid-area__text">
                     <img
                         class="train-station__img"
                         src="assets/images/train-station.png"
                         alt=""
                     />
-                </div>
-
-                <div class="grid-area grid-area__seven"></div>
-                <div class="grid-area grid-area__text">
                     <p>Bus 16</p>
                     <ul>
                         <li class="direction-info" id="direction"></li>
                         <li class="departure-time" id="time"></li>
                     </ul>
                 </div>
-                <div class="" id="bus"></div>
-            </div>
-            <script src="script.js"></script>
+
+                <div class="grid-area grid-area__one">
+                    <div class="station station--1" data-rotate=""></div>
+                </div>
+
+                <div class="grid-area grid-area__two">
+                    <div class="station station--2"></div>
+                </div>
+
+                <div class="grid-area grid-area__three">
+                    <div class="station station--3"></div>
+                </div>
+
+                <div class="grid-area grid-area__four">
+                    <div class="station station--4"></div>
+                </div>
+
+                <div class="grid-area grid-area__five">
+                    <div class="station station--5"></div>
+                </div>
+
+                <div class="bus" id="bus"></div>
+            </section>
         </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
