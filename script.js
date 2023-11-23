@@ -10,8 +10,15 @@ for (let station of stations) {
     const rotation = station.dataset.rotate;
 
     tl.to("#bus", { x: x, y: y, duration: 1 });
-    tl.to("#bus", { rotate: rotation, duration: 0.25 });
+    tl.to("#bus", { rotate: rotation, duration: 1 });
 }
+
+// Hur funkar det när man deklarerar varibler som med x & y?
+// Vad blir skillnaden på att använda style ist för dataset i denna bemärkelse? 
+// Måste man utgå ifrån top: 0; och left: 0; ?
+
+// Hur gör man den responsiv oavsett hur stor den är? 
+// ska man använda grid?
 
 // let url =
 //     "https://api.resrobot.se/v2.1/departureBoard?id=740000002&format=json&accessId=84c3c896-2e69-454c-b8af-f585ae31dd28";

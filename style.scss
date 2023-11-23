@@ -29,14 +29,13 @@ body {
 .main {
     width: 100vw;
     height: 100vh;
-
     display: grid;
     place-items: center;
 }
 
 .section-grid {
-    width: 80vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     background: rgb(255, 255, 255);
     // background-image: url(assets/images/paper.webp);
     background-blend-mode: exclusion;
@@ -60,6 +59,9 @@ body {
 .grid-area__text {
     grid-area: 3 / 3 / 7 / 7;
 }
+.grid-area__zero {
+    grid-area: 5 / 8 / 6 / 9;
+}
 .grid-area__one {
     grid-area: 5 / 7 / 6 / 8;
 }
@@ -75,6 +77,9 @@ body {
 .grid-area__five {
     grid-area: 7 / 4 / 8 / 6;
 }
+.grid-area__six {
+    grid-area: 7 / 8 / 7 / 9;
+}
 .station {
     z-index: 100;
     position: absolute;
@@ -89,12 +94,14 @@ body {
 }
 
 .bus {
+    transform-origin: 50% 50%;
     position: absolute;
-    transform-origin: center center;
-    width: 4.5rem;
+    width: 5rem;
     height: 2rem;
     border-radius: 5px;
     background: black;
+    top: 0;
+    left: -1.5rem;
 }
 
 // .train-station--bg-red {
