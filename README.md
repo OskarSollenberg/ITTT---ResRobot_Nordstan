@@ -4,11 +4,7 @@ Gothenburg Nordstan buss departures in real-time.
 Hi, This was this weeks project at Hyper Island where im currently studiying to become a Front End Developer. This week i have looked into API´s, so i decided to make a website displaying live departure times for one of the most used busses in all of Gothemburg.
 I really enjoyed my first time working with API´s and learned alot from working with live-affected automations in Javascript. I also made the UX myself, Hope you like it!!
 
-
-
-<img src="assets/nordstan-preview 16.34.31.gif" width="600">
-
-
+![nordstan-preview-small](https://github.com/OskarSollenberg/ITTT---ResRobot_Nordstan/assets/122973984/bee3f2e9-52d7-4d0d-9463-123cea082672)
 
 
 
