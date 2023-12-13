@@ -7,7 +7,7 @@ I really enjoyed my first time working with API´s and learned alot from working
 
 
 <img src="assets/nordstan-preview 16.34.31.gif" width="600">
-<img src="nordstan-preview-small.gif" width="600">
+<img src="nordstan-preview.gif" width="600">
 
 
 
